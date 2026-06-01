@@ -1,0 +1,38 @@
+---
+const allPosts = Object.values(import.meta.glob('../pages/*.md', { eager: true }));
+
+/*
+
+<div id="main-menu" class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about-me/">About Me</a>
+    {allPosts.map((post: any) => <a href=`${post.url}/`>{post.frontmatter.title}</a>)}
+</div>
+*/
+---
+
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    
+    <li class="dropdown-parent">
+      <a href="/add-ons/" class="dropdown-trigger">Add-ons ▾</a>
+      
+      <ul class="dropdown-menu">
+        <li><a href="/beyond-the-underground/">Beyond The Underground</a></li>
+        <li><a href="/item-info-plus/">Item Info+</a></li>
+        <li><a href="/redstone-info-plus/">Redstone Info+</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-parent">
+      <a href="#" class="dropdown-trigger">Guides ▾</a>
+      
+      <ul class="dropdown-menu">
+        <li><a href="/ios-import-tutorial/">iOS Import Tutorial</a></li>
+      </ul>
+    </li>
+    
+    <li><a href="/about-me/">About Me</a></li>
+  </ul>
+</nav>
